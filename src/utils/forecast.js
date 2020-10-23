@@ -16,7 +16,8 @@ const forecast = ((latitude, longitude, callback) => {
             const location = response.body.location
             callback(undefined,{
                 forecast: `${location.region}/${location.country}: ${data.weather_descriptions[0]}, It is currently ${data.temperature} degrees . It feels like ${data.feelslike} degrees out.`,
-                location: `${location.region}/${location.country}`
+                location: `${location.region}/${location.country}`,
+                humidity: `${data.humidity}`
             })
         }
 
